@@ -26,8 +26,7 @@
     </div>
     <div style="margin-left: 110px;">
         <button type="button" class="layui-btn layui-btn-warm" onclick="transLog()">转换并复制</button>
-        <button type="button" class="layui-btn layui-btn-warm" onclick="clearLog()">清空输入 </button>
-        <button type="button" class="layui-btn layui-btn-warm" onclick="clearOut()">清空输出 </button>
+        <button type="button" class="layui-btn layui-btn-warm" onclick="clearAll()">清空输入输出 </button>
     </div>
     <br>
     <br>
@@ -67,7 +66,7 @@
                 }
             }
             var statementStr = textVa.substring(statementStartIndex + "Preparing: ".length, statementEndIndex);
-            statementStr = statementStr.toUpperCase();
+            //statementStr = statementStr.toUpperCase();
             // console.log(statementStr);
             //获取参数
             var parametersStartIndex = textVa.indexOf('Parameters: ');
@@ -138,6 +137,11 @@
         function clearOut() {
             var sql = document.getElementById("sql");
             sql.innerHTML = "";
+        }
+
+        function clearAll(){
+            clearLog();
+            clearOut();
         }
 
     </script>
